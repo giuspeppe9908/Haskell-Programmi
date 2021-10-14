@@ -6,8 +6,6 @@ primo n = aux 2
           | otherwise      = aux (k + 1)
 
 primi :: Int -> [Int]
-primi n = aux 2
-  where
-    aux k | k >= n         	= []
-          | primo k		= k : aux (k + 1)
-          | otherwise      	= aux (k + 1)
+primi x| x < 3 = [] 
+       | primo x = primi(x-1) ++ [x]
+       | otherwise = primi(x-1)
